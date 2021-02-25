@@ -1,14 +1,17 @@
-import React from 'react';
-//import MyComponent from './MyComponent';
-//import Counter from './Counter';
-//import Say from './Say';
-import EventPractice from './EventPractice';
+import React, { Component } from 'react';
+import ScrollBox from './ScrollBox';
 
-const App = () => {
-  //return <MyComponent name="123" favoriteNumber={2}>리액트</MyComponent>;
-  //return <Counter />
-  //return <Say />
-  return <EventPractice />;
-};
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ScrollBox ref={(ref) => this.scrollBox=ref}/>
+        <button onClick={() => this.scrollBox.scrollToBottom()}>
+          맨밑으로
+        </button>
+      </div>
+    )
+  }
+}
 
 export default App;
